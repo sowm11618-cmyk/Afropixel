@@ -7,13 +7,16 @@ h1, h2 {
     font-weight: normal;
     text-transform: uppercase;
 }
+
 h1 {
     font-size: 2rem;
 }
+
 h2 {
     font-size: 1.5rem;
 }
-.bloc_img {
+
+.liste_produits {
     display: grid;
     grid-template-columns: repeat(4, 280px);
     gap: 20px;
@@ -21,7 +24,8 @@ h2 {
     margin: 20px auto;
     padding: 0 10px;
 }
-.images {
+
+.forme_carte_produit {
     box-sizing: border-box;
     width: 250px;
     border: 3px solid #b08a3e;
@@ -29,7 +33,8 @@ h2 {
     padding: 25px 25px 15px;
     text-align: center;
 }
-.images img {
+
+.image_produit {
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -37,24 +42,22 @@ h2 {
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.85);
     margin-bottom: 30px;
 }
-.images p {
+
+.forme_carte_produit div {
     margin: 6px 0;
     font-size: 1.2rem;
 }
-.commandes {
+
+.div_actions {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
-.commandes button {
+
+.div_actions button {
     width: 30px;
     height: 26px;
     font-weight: bold;
     cursor: pointer;
-}
-.quantite {
-    min-width: 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
 }

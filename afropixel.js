@@ -1,61 +1,49 @@
-function formaterPrix(prix) {
-    return prix.toLocaleString("fr-FR") + " CFA";
-}
+import pictures from "../pictures.json" with { type: "json" };
 
-function creerCarte(image) {
-    let quantite = 0;
+class CarteProduit {
+    constructor(id, nom, prix, categorie, url) {
+        this.id = id;
+        this.nom = nom;
+        this.prix = prix;
+        this.categorie = categorie;
+        this.url = url;
+    }
 
-    const carte = document.createElement("div");
-    carte.className = "images";
-
-    const photo = document.createElement("img");
-    photo.src = image.url;
-    photo.alt = image.nom;
-
-    const nom = document.createElement("p");
-    nom.textContent = image.nom;
-
-    const prix = document.createElement("p");
-    prix.textContent = formaterPrix(image.prix);
-
-    const commandes = document.createElement("div");
-    commandes.className = "commandes";
-
-    const boutonPlus = document.createElement("button");
-    boutonPlus.textContent = "+";
-
-    const affichageQuantite = document.createElement("span");
-    affichageQuantite.className = "quantite";
-    affichageQuantite.textContent = quantite;
-
-    const boutonMoins = document.createElement("button");
-    boutonMoins.textContent = "-";
-
-    boutonPlus.addEventListener("click", function () {
-        quantite++;
-        affichageQuantite.textContent = quantite;
-    });
-
-    boutonMoins.addEventListener("click", function () {
-        if (quantite > 0) {
-            quantite--;
-        }
-        affichageQuantite.textContent = quantite;
-    });
-
-    commandes.append(boutonPlus, affichageQuantite, boutonMoins);
-    carte.append(photo, nom, prix, commandes);
-
-    return carte;
-}
-
-async function demarrer() {
-    const reponse = await fetch("pictures.json");
-    const images = await reponse.json();
-
-    for (const image of images) {
-        blocImg.appendChild(creerCarte(image));
+    rendre() {
+        return `
+            <div class="forme_carte_produit">
+                <img class="image_produit" src="${this.url}" alt="${this.nom}">
+                <div>${this.nom}</div>
+                <div>${this.prix.toLocaleString("fr-FR")} CFA</div>
+                <div class="div_actions">
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+            </div>
+        `;
     }
 }
 
-demarrer();
+class ListeProduit {
+    constructor(pictures) {
+        this.carteProduits = [];
+        for (const picture of pictures) {
+            this.carteProduits.push(
+                new CarteProduit(picture.id, picture.nom, picture.prix, picture.categorie, picture.url)
+            );
+        }
+    }
+
+    rendre() {
+        let rendu = "";
+        for (const carteProduit of this.carteProduits) {
+            rendu += carteProduit.rendre();
+        }
+
+        return `<div class="liste_produits">${rendu}</div>`;
+    }
+}
+
+const liste_produits = new ListeProduit(pictures);
+
+document.body.innerHTML += liste_produits.rendre();
