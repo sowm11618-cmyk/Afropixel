@@ -1,5 +1,5 @@
 import pictures from "../pictures.json" with { type: "json" };
-import {ListeProduit} from "./ListeProduit.js";
+import {ListeProduit} from "./ListeProduits.js";
 
 const liste_produits = new ListeProduit(pictures);
 
