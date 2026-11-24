@@ -47,14 +47,12 @@ h2 {
     align-items: center;
     gap: 10px;
 }
-
 .commandes button {
     width: 30px;
     height: 26px;
     font-weight: bold;
     cursor: pointer;
 }
-
 .quantite {
     min-width: 20px;
     font-size: 1.2rem;
