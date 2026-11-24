@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afro Pixel</title>
+    <link rel="stylesheet" href="afropixel.css">
+    <script src="afropixel.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>AFRO PIXEL</h1>
+        <h2>LA RÉFÉRENCE DANS LA VENTE D'IMAGES DE QUALITÉ</h2>
+        <button id="ouvrir_panier" class="panier">
+            <img src="images/cart-logo.png" alt="Panier">
+        </button>
+    </header>
+
+    <hr>
+    <hr>
+
+    <div class="bloc_img" id="blocImg"></div>
+
+    <!-- Fenêtre du panier (cachée tant qu'on ne clique pas sur l'icône) -->
+    <div id="fond_panier" class="fond_panier">
+        <div class="contenu_panier">
+            <div class="entete_panier">
+                <h2>Mon panier</h2>
+                <button id="fermer_panier">← Retour aux produits</button>
+            </div>
+
+            <!-- Les images choisies apparaissent ici -->
+            <div classe="liste_panier" id="liste_panier"></div>
+
+            <div class="total_panier">
+                <p>Nombre d'images : <strong id="total_quantite">0</strong></p>
+                <p>Montant total : <strong id="montant_total">0 CFA</strong></p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
