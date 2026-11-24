@@ -1,0 +1,8 @@
+.liste_produits {
+    display: grid;
+    grid-template-columns: repeat(4, 280px);
+    gap: 20px;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 0 10px;
+}

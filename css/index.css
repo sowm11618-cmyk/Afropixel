@@ -1,0 +1,19 @@
+@import url("./carte_produit.css");
+@import url("./liste_produits.css");
+
+h1, h2 {
+    text-align: center;
+    color: #b08a3e;
+    margin: 20px 0;
+    padding: 10px;
+    font-family: "Bebas Neue", Impact, sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}

@@ -8,7 +8,6 @@ class CarteProduit {
         this.categorie = categorie;
         this.url = url;
     }
-
     rendre() {
         return `
             <div class="forme_carte_produit">
@@ -23,7 +22,6 @@ class CarteProduit {
         `;
     }
 }
-
 class ListeProduit {
     constructor(pictures) {
         this.carteProduits = [];
@@ -33,17 +31,14 @@ class ListeProduit {
             );
         }
     }
-
     rendre() {
         let rendu = "";
         for (const carteProduit of this.carteProduits) {
             rendu += carteProduit.rendre();
         }
-
         return `<div class="liste_produits">${rendu}</div>`;
     }
 }
-
 const liste_produits = new ListeProduit(pictures);
 
 document.body.innerHTML += liste_produits.rendre();
