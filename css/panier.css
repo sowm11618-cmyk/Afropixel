@@ -1,0 +1,129 @@
+.panier {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+button.panier {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.panier img {
+    width: 80px;
+    height: auto;
+    display: block;
+}
+
+.compteur {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 6px;
+    border-radius: 12px;
+    background: #b08a3e;
+    color: #fff;
+    font: bold 14px/24px Arial, sans-serif;
+    text-align: center;
+}
+
+.compteur.cache {
+    display: none;
+}
+
+.fond_panier {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.fond_panier.actif {
+    display: block;
+}
+
+.contenu_panier {
+    box-sizing: border-box;
+    width: 900px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.entete_panier {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #b08a3e;
+}
+
+.entete_panier h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.article-panier {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.article-panier img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.infos-article {
+    flex: 1;
+}
+
+.infos-article div {
+    margin: 4px 0;
+}
+
+.panier-vide {
+    text-align: center;
+    padding: 20px 0;
+}
+
+#fermer_panier {
+    padding: 10px 18px;
+    border: 2px solid #b08a3e;
+    border-radius: 25px;
+    background: white;
+    color: #b08a3e;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#fermer_panier:hover {
+    background: #b08a3e;
+    color: white;
+}
+
+.total_panier {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 2px solid #b08a3e;
+    text-align: right;
+    font-size: 1.2rem;
+}
+
+.total_panier div {
+    margin: 5px 0;
+}

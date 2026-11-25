@@ -1,5 +1,6 @@
 @import url("./carte_produit.css");
 @import url("./liste_produits.css");
+@import url("./panier.css");
 
 h1, h2 {
     text-align: center;
@@ -10,6 +11,7 @@ h1, h2 {
     font-weight: normal;
     text-transform: uppercase;
 }
+
 h1 {
     font-size: 2rem;
 }
