@@ -1,4 +1,4 @@
-import { formaterPrix } from "./FonctionsUtils.js";
+import {formaterPrix} from "./FonctionsUtils.js";
 
 export default class Panier {
     constructor(liste) {
@@ -19,13 +19,27 @@ export default class Panier {
         localStorage.setItem("panier", JSON.stringify(sauvegarde));
     }
     articles() {
-        return this.liste.carteProduits.filter((carte) => carte.quantite > 0);
+        const resultat = [];
+        for (const carte of this.liste.carteProduits) {
+            if (carte.quantite > 0) {
+                resultat.push(carte);
+            }
+        }
+        return resultat;
     }
     quantiteTotale() {
-        return this.articles().reduce((somme, carte) => somme + carte.quantite, 0);
+        let total = 0;
+        for (const carte of this.liste.carteProduits) {
+            total += carte.quantite;
+        }
+        return total;
     }
     montantTotal() {
-        return this.articles().reduce((somme, carte) => somme + carte.prix * carte.quantite, 0);
+        let total = 0;
+        for (const carte of this.liste.carteProduits) {
+            total += carte.prix * carte.quantite;
+        }
+        return total;
     }
     rendreArticle(carte) {
         return `
@@ -57,7 +71,7 @@ export default class Panier {
                 <div class="contenu_panier">
                     <div class="entete_panier">
                         <h2>Mon panier</h2>
-                        <button id="fermer_panier">← Retour aux produits</button>
+                        <button id="fermer_panier">Retour aux produits</button>
                     </div>
 
                     <div id="liste_panier">${this.rendreArticles()}</div>
@@ -78,13 +92,10 @@ export default class Panier {
         const compteur = document.getElementById("compteur");
         compteur.textContent = this.quantiteTotale();
         compteur.classList.toggle("cache", this.quantiteTotale() === 0);
-
         this.sauvegarder();
     }
-
     activerOuverture() {
         const fond = document.getElementById("fond_panier");
-
         document.addEventListener("click", (evenement) => {
             if (evenement.target.closest("#ouvrir_panier")) {
                 fond.classList.add("actif");
@@ -93,7 +104,6 @@ export default class Panier {
                 fond.classList.remove("actif");
             }
         });
-
         document.addEventListener("keydown", (evenement) => {
             if (evenement.key === "Escape") {
                 fond.classList.remove("actif");

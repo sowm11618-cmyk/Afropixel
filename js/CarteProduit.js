@@ -9,7 +9,6 @@ export default class CarteProduit {
         this.url = url;
         this.quantite = 0;
     }
-
     rendre() {
         return `
             <div class="forme_carte_produit">

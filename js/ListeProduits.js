@@ -10,20 +10,16 @@ export default class ListeProduit {
             );
         }
     }
-
     trouver(id) {
         return this.carteProduits.find((carte) => carte.id === id);
     }
-
     rendre() {
         let rendu = "";
         for (const carteProduit of this.carteProduits) {
             rendu += carteProduit.rendre();
         }
-
         return `<div class="liste_produits">${rendu}</div>`;
     }
-
     actualiser() {
         for (const carte of this.carteProduits) {
             const compteurs = document.querySelectorAll(`[data-quantite="${carte.id}"]`);
@@ -32,20 +28,16 @@ export default class ListeProduit {
             }
         }
     }
-
     activerBoutons(surChangement) {
         document.addEventListener("click", (evenement) => {
             const bouton = evenement.target.closest("button[data-action]");
             if (!bouton) return;
-
             const carte = this.trouver(Number(bouton.dataset.id));
-
             if (bouton.dataset.action === "ajouter") {
                 ajouter(carte);
             } else {
                 retirer(carte);
             }
-
             surChangement();
         });
     }

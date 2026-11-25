@@ -6,7 +6,6 @@
     padding: 25px 25px 15px;
     text-align: center;
 }
-
 .image_produit {
     width: 200px;
     height: 200px;
@@ -15,26 +14,22 @@
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.85);
     margin-bottom: 30px;
 }
-
 .forme_carte_produit div {
     margin: 6px 0;
     font-size: 1.2rem;
 }
-
 .div_actions {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
-
 .div_actions button {
     width: 30px;
     height: 26px;
     font-weight: bold;
     cursor: pointer;
 }
-
 .quantite {
     min-width: 20px;
     font-size: 1.2rem;
